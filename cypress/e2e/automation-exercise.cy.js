@@ -57,7 +57,7 @@ describe("Automation Exercise", () => {
         cy.get('[data-qa="email"]').type(`tester-qa@mail.com`)
         cy.get('[data-qa="subject"]').type(`Test Automation`)
         cy.get('[data-qa="message"]').type(`Learning Test Automation`)
-        cy.fixture("example.json").as("arquivo")
+        cy.fixture("data.json").as("arquivo")
         cy.get('input[name="upload_file"]').selectFile("@arquivo")
         cy.get('[data-qa="submit-button"]').click()
         cy.get(".status").should(
