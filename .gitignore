@@ -1,4 +1,6 @@
 /node_modules
 /results/
 cypress/reports
+cypress/reports/html/assets
 yarn.lock
+cypress/screenshots
