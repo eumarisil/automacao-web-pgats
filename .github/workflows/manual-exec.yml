@@ -16,11 +16,11 @@ jobs:
             - name: Instalando dependências
               run: yarn
 
-            - name: Instalando playwright
+            - name: Instalando cypress
               run: yarn add cypress
 
             - name: Executando testes
-              run: yarn run e2e
+              run: yarn run test
 
             - uses: actions/upload-artifact@v4
               if: ${{ !cancelled() }}
