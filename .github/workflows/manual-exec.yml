@@ -1,25 +1,35 @@
-name: "Execução manual"
+name: 'Execução manual'
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
+
 
 jobs:
-  e2e-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    e2e-tests:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
 
-      - name: Instalação de dependências
-        run: |
-          npm install -g yarn
-          yarn install
-          yarn add cypress cypress-mochawesome-reporter @faker-js/faker mocha@latest
+            - name: Instalando yarn
+              run: npm install -g yarn
 
-      - name: Executando testes
-        run: yarn run test
+            - name: Instalando dependências do projeto
+              run: yarn
 
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: cypress-report-${{ github.run_number }}
-          path: cypress/reports/html/
+            - name: Instalando cypress
+              run: yarn add cypress
+
+            - name: Instalando dependências do teste
+              run: yarn add cypress cypress-mochawesome-reporter @faker-js/faker mocha@latest
+
+            - name: Instalando faker
+              run: yarn add @faker-js/faker  
+
+            - name: Executando testes
+              run: yarn run test
+
+            - uses: actions/upload-artifact@v4
+              if: ${{ !cancelled() }}
+              with:
+                  name: cypress-report-${{ github.run_number }}
+                  path: cypress/reports/html/
