@@ -22,9 +22,6 @@ jobs:
             - name: Instalando dependências do teste
               run: yarn add cypress cypress-mochawesome-reporter @faker-js/faker mocha@latest
 
-            - name: Instalando faker
-              run: yarn add @faker-js/faker  
-
             - name: Executando testes
               run: yarn run test
 
