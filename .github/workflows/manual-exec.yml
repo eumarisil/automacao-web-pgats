@@ -19,6 +19,12 @@ jobs:
             - name: Instalando cypress
               run: yarn add cypress
 
+            - name: Instalando cypress-mochawesome-reporter
+              run: yarn add cypress-mochawesome-reporter  
+
+            - name: Instalando faker
+              run: yarn add @faker-js/faker  
+
             - name: Executando testes
               run: yarn run test
 

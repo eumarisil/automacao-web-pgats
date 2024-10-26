@@ -1,4 +1,4 @@
 /node_modules
 /results/
-cypress/reports/html
+cypress/reports
 yarn.lock
